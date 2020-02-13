@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  user: postgres
+  password: postgres
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: graphql_on_rails_way_development
+
+test:
+  <<: *default
+  database: graphql_on_rails_way_test
+
+production:
+  <<: *default
+  database: graphql_on_rails_way_production
+  username: graphql_on_rails_way
+  password: <%= ENV['GRAPHQL_ON_RAILS_WAY_DATABASE_PASSWORD'] %>
