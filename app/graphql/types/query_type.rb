@@ -1,7 +1,7 @@
 module Types
   class QueryType < Types::BaseObject
 
-    field :all_links, [LinkType], null: true,
+    field :all_links, [Types::LinkType], null: true
 
     def all_links
       Link.all
